@@ -1,0 +1,53 @@
+
+----[ R:evolution PHP v0.1 ]----------------------------------------------------
+
+Porting the best of the Ruby Standard Library to PHP 5.3.
+
+--------------------------------------------------------------------------------
+
+Copyright(c) 2010 by Dina-Marie Abad Lolich
+dlolich@modron.net
+
+this code is licensed under the "don't be a retarded asshole" license.
+if i don't like how you use this software i can tell you to fuck off
+and you can't use it, otherwise you can use it.
+
+--------------------------------------------------------------------------------
+
+You need to have PHP 5.3 built and installed on your system for this code to
+be of any use. Not very many distributions are offering PHP 5.3 right now so
+you should probably download it directly from PHP.net.
+
+My motivation for writing this code is not because I find it useful, but because
+I believe the reason why many web-BROgrammers are choosing Ruby is not due to
+the language, but due to the more robust standard library that it comes with, but
+they dont fully realize this fact. The standard library is heavily driven around
+blocks in a closure-passing style since iterators like each and map are methods
+on objects instead of language constructs. PHP 5.3 has made much headway in the
+way of language constructs such as anonymous functions, namespaces and late static
+binding (although still without operator overloading).
+
+Ruby programmers seem to be a bit over-zealous about commending their language
+of choice, but PHP isnt doing much in the way of defending itself (via its users)
+and so I would like to offer this library up as a way of demonstrating the merits
+of PHP 5.3. It is still a work in progress, and there are definately some serious
+hurdles to overcome, particularly the native types in PHP and the inability to
+call object properties assigned to anonymous functions in a nice way due to the
+sytax afforded by php. Its the many small things PHP forgot to handle which
+makes such an endeavor such as porting the Ruby standard library a difficult task.
+The large bulk of the task was otherwise simple.
+
+Some of the language constructs in Ruby, such as mixins, are nearly impossible to
+acheive without designing a relatively contrived alternative prototypical object
+model based purely on anonymous functions and object properties. Had PHP simply
+made a few different decisions this might have been an easy reality to manifest.
+
+Current handling and sheperding of numeric types is sort of a cluster-fuck but
+will improve once a paradigm is settled upon. Strings and Arrays seem to be working
+pretty decently. The general idea is to have a fully hierarchical object model
+derived from the Object class but the functor between native types and class
+types is not fully solidified. Please be patient.
+
+Please refer to test.php to see code examples. 
+
+--------------------------------------------------------------------------------
